@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+
+REPO="$1" ; shift
+
+case "$REPO" in
+"openwrt-github")
+  REPO="https://github.com/openwrt/openwrt.git"
+  ;;
+"lede-github")
+  REPO="https://github.com/lede-project/source.git"
+  ;;
+"openwrt")
+  REPO="https://git.openwrt.org/openwrt/openwrt.git"
+  ;;
+"lede")
+  REPO="https://git.lede-project.org/source.git"
+  ;;
+esac
+
+exec git clone "$REPO" source "$@"
