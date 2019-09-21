@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 apt-get install -y \
-  subversion g++ zlib1g-dev build-essential git python rsync man-db
+  subversion g++ zlib1g-dev build-essential git python python3 rsync man-db
 apt-get install -y \
   libncurses5-dev gawk gettext unzip file libssl-dev wget zip
