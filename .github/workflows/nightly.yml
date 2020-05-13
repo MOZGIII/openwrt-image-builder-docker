@@ -1,0 +1,17 @@
+name: Nightly Builds
+
+on:
+  schedule:
+    - cron:  '0 18 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to docker registry
+      run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}" "${{ secrets.DOCKER_REPO }}"
+    - name: Build and push nightly image
+      run: .github/scripts/build-nightly.sh "${{ secrets.DOCKER_REPO }}" "gha-$GITHUB_RUN_ID"
