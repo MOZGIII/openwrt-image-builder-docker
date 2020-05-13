@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
-apt-get install -y \
+
+PACKAGES=(
   subversion g++ zlib1g-dev build-essential git python python3 rsync man-db
-apt-get install -y \
   libncurses5-dev gawk gettext unzip file libssl-dev wget zip
+)
+
+apt-get install -y "${PACKAGES[@]}"
