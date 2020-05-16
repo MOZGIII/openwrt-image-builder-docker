@@ -14,4 +14,4 @@ jobs:
     - name: Login to docker registry
       run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
     - name: Build and push nightly image
-      run: .github/scripts/build-nightly.sh "${{ secrets.DOCKER_REPO }}" "gha-$GITHUB_RUN_ID"
+      run: .github/scripts/nightly.sh "${{ secrets.DOCKER_REPO }}" "gha-$GITHUB_RUN_ID"
