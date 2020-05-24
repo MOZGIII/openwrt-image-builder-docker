@@ -22,7 +22,6 @@ RUN groupadd builder --gid 1000 \
   --uid 1000 \
   --gid 1000
 
-COPY ./scripts/* /usr/local/bin/
 COPY --from=su-exec /usr/src/app/su-exec /usr/local/bin/
 
 WORKDIR /build
