@@ -4,6 +4,7 @@ set -euo pipefail
 PACKAGES=(
   subversion g++ zlib1g-dev build-essential git python python3 rsync man-db
   libncurses5-dev gawk gettext unzip file libssl-dev wget zip
+  libxml-parser-perl
 )
 
 apt-get install -y "${PACKAGES[@]}"
