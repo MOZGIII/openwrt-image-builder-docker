@@ -3,11 +3,14 @@ set -euo pipefail
 
 PACKAGES=(
   build-essential
+  bzr
+  curl
   file
   g++
   gawk
   gettext
   git
+  jq
   libncurses5-dev
   libssl-dev
   libxml-parser-perl
@@ -15,9 +18,12 @@ PACKAGES=(
   python
   python3
   rsync
+  signify-openbsd
   subversion
+  time
   unzip
   wget
+  xz-utils
   zip
   zlib1g-dev
 )
